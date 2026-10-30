@@ -129,15 +129,17 @@ menuToggle.addEventListener("click", () => {
 
 mainNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    mainNav.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Abrir menu");
+    window.requestAnimationFrame(() => {
+      mainNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+    });
   });
 });
 
 function setupScrollAnimations() {
   const revealItems = document.querySelectorAll(
-    ".about-grid > *, .center-heading, .area-card, .care-card, .opinion-heading, .opinion-empty, .opinion-card, .process-grid > *, .faq-grid > *, .contact-box > *, .footer-main, .footer-bottom"
+    ".about-grid > *, .center-heading, .area-card, .care-card, .opinion-heading, .opinion-empty, .opinion-card, .process-grid > *, .step, .faq-grid > *, .contact-box > *, .footer-main, .footer-bottom"
   );
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
