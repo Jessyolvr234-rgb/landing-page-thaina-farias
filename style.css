@@ -64,13 +64,9 @@ h1 em, h2 em { color: var(--rose); font-weight: 400; }
 .note-icon { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--champagne); color: var(--gold); }
 .hero-art { position: relative; min-height: 470px; display: grid; place-items: center; }
 .art-frame { width: min(100%, 410px); min-height: 450px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--champagne); border-radius: 48% 48% 5px 5px; overflow: hidden; border: 1px solid rgba(178,138,96,.25); }
-.art-frame::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(178,138,96,.32); border-radius: 48% 48% 2px 2px; pointer-events: none; }
+.art-frame::before { content: ""; position: absolute; z-index: 1; inset: 18px; border: 1px solid rgba(178,138,96,.32); border-radius: 48% 48% 2px 2px; pointer-events: none; }
 .art-glow { position: absolute; width: 280px; height: 280px; background: radial-gradient(circle, rgba(201,149,140,.22), transparent 70%); top: 45px; }
-.tree-placeholder { position: relative; display: grid; place-items: center; width: min(86%, 350px); margin-top: -12px; }
-.tree-logo { display: block; width: 100%; height: auto; object-fit: contain; }
-.art-caption { position: absolute; bottom: 44px; display: flex; flex-direction: column; text-align: center; gap: 3px; color: var(--brown); }
-.art-caption span { font: 500 12px var(--serif); letter-spacing: .16em; }
-.art-caption small { font-size: 7px; letter-spacing: .14em; }
+.portrait-photo { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .art-spark { position: absolute; color: var(--gold); }
 .spark-a { top: 45px; right: 15px; font-size: 42px; }
 .spark-b { bottom: 70px; left: -3px; font-size: 27px; color: var(--rose); }
@@ -198,8 +194,6 @@ h2 { font-size: clamp(34px, 4vw, 49px); line-height: 1.2; margin-bottom: 20px; }
   .note-icon { flex: 0 0 26px; }
   .hero-art { min-height: 0; margin: 0 auto; width: min(100%, 370px); }
   .art-frame { min-height: 0; aspect-ratio: .96; }
-  .tree-placeholder { width: min(82%, 300px); }
-  .art-caption { bottom: 22px; }
   .hero-bottom { flex-wrap: wrap; justify-content: flex-start; gap: 8px 10px; padding-top: 22px; font-size: 9px; line-height: 1.6; }
   .about-grid, .process-grid, .faq-grid { min-width: 0; grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .about-copy { padding-top: 0; }
