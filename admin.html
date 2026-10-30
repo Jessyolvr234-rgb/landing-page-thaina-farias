@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FCF7EF">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Moderação de feedbacks | Thainá Farias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <main class="admin-main">
+    <a class="text-link admin-back" href="index.html">← Voltar ao site</a>
+    <header class="admin-heading">
+      <p class="eyebrow">Área restrita</p>
+      <h1>Moderação de <em>feedbacks.</em></h1>
+      <p>Entre com uma conta autorizada para revisar comentários antes de publicá-los.</p>
+    </header>
+
+    <section class="admin-panel" id="admin-login-panel" aria-labelledby="admin-login-title">
+      <h2 id="admin-login-title">Acessar moderação</h2>
+      <form id="admin-login-form" class="admin-login-form">
+        <label for="admin-email">E-mail</label>
+        <input id="admin-email" name="email" type="email" autocomplete="username" required>
+        <label for="admin-password">Senha</label>
+        <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-primary" type="submit">Entrar</button>
+      </form>
+      <p class="admin-status" id="admin-login-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="admin-panel" id="admin-feedback-panel" hidden aria-labelledby="admin-feedback-title">
+      <div class="admin-panel-heading">
+        <div>
+          <h2 id="admin-feedback-title">Comentários para revisar</h2>
+          <p>Revise o texto e remova detalhes que possam identificar alguém ou revelar informações pessoais/de saúde.</p>
+        </div>
+        <button class="button button-secondary" id="admin-logout" type="button">Sair</button>
+      </div>
+      <p class="admin-status" id="admin-feedback-status" role="status" aria-live="polite"></p>
+      <div class="admin-feedback-list" id="admin-feedback-list"></div>
+    </section>
+  </main>
+</body>
+</html>
